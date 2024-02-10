@@ -1,62 +1,29 @@
 <!DOCTYPE html>
 <html>
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
+  <head>
+    <title>Simple Marker</title>
+    <!-- The callback parameter is required, so we use console.debug as a noop -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwho3UBmb2O7lY-7W3QKXvpGUeQ_USZEI&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      gmp-map {
+        height: 100%;
+      }
 
-.bgimg {
-  background-image: url('/w3images/forestbridge.jpg');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-</style>
-<body>
-
-<div class="bgimg">
-  <div class="topleft">
-    <p>ISSA CASH LOANS</p>
-  </div>
-  <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
-    <p>35 days left</p>
-  </div>
-  <div class="bottomleft">
-    <p>Some COOL text</p>
-  </div>
-</div>
-
-</body>
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <gmp-map center="-26.207916259765625,28.04387664794922" zoom="14" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="-26.207916259765625,28.04387664794922" title="My location"></gmp-advanced-marker>
+    </gmp-map>
+  </body>
 </html>
